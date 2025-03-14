@@ -1,0 +1,99 @@
+/* Base Styles */
+:root {
+    --primary: #3B82F6;
+    --secondary: #8B5CF6;
+    --dark-bg: #111827;
+    --light-bg: #ffffff;
+    --text-dark: #f3f4f6;
+    --text-light: #1f2937;
+}
+
+body {
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+/* Dark/Light Mode */
+body.dark {
+    background: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+body.light {
+    background: var(--light-bg);
+    color: var(--text-light);
+}
+
+/* Mouse Follower */
+.mouse-follower {
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(139,92,246,0.1) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Navigation */
+.nav {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Contact Section */
+.contact-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-link {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
