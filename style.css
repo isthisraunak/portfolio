@@ -24,7 +24,6 @@ body {
     transition: background 0.4s ease, color 0.3s ease;
 }
 
-/* Animated Background */
 .gradient-bg {
     position: fixed;
     top: -50%;
@@ -42,7 +41,6 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Mouse Follower */
 .mouse-follower {
     position: fixed;
     width: 140px;
@@ -59,7 +57,6 @@ body {
     transition: transform 0.15s ease-out;
 }
 
-/* Navigation */
 .nav {
     padding: 1.5rem 5vw;
     display: flex;
@@ -78,7 +75,6 @@ body {
     color: transparent;
 }
 
-/* Theme Toggle */
 .theme-toggle {
     padding: 0.75rem 1.25rem;
     border-radius: 999px;
@@ -97,24 +93,26 @@ body {
     transform: translateY(-1px);
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 2rem 5vw;
 }
 
 .hero-content {
     max-width: 1200px;
-    text-align: center;
+    margin: 0 auto;
+    transform: translateY(-5%);
 }
 
 .hero-title {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -123,15 +121,15 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     color: var(--light-2);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     opacity: 0.9;
+    font-weight: 300;
 }
 
-/* CTA Button */
 .cta-button {
-    padding: 1rem 2rem;
+    padding: 1.25rem 3rem;
     border-radius: 999px;
     background: var(--gradient);
     color: white;
@@ -139,11 +137,12 @@ body {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 1.1rem;
+    gap: 1rem;
+    font-size: 1.5rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-top: 2rem;
 }
 
 .cta-button::before {
@@ -165,16 +164,16 @@ body {
 }
 
 .arrow-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     transition: transform 0.3s ease;
+    stroke-width: 1.5;
 }
 
 .cta-button:hover .arrow-icon {
     transform: translateX(4px);
 }
 
-/* Contact Section */
 .contact-section {
     min-height: 100vh;
     padding: 5rem 5vw;
@@ -196,13 +195,14 @@ body {
 .social-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 3rem;
+    max-width: 1000px;
     width: 100%;
+    padding: 2rem;
 }
 
 .social-card {
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 1.5rem;
     position: relative;
     overflow: hidden;
@@ -215,6 +215,8 @@ body {
     align-items: center;
     text-decoration: none;
     color: currentColor;
+    min-height: 400px;
+    justify-content: center;
 }
 
 .social-card:hover {
@@ -236,9 +238,9 @@ body {
 }
 
 .social-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1.5rem;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
 }
 
 .email-card .social-icon {
@@ -250,12 +252,12 @@ body {
 }
 
 .card-label {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--light-2);
+    font-weight: 500;
 }
 
-/* Animations */
 @keyframes textReveal {
     from {
         opacity: 0;
@@ -267,13 +269,26 @@ body {
     }
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.8rem;
     }
     
     .social-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .social-card {
+        min-height: 300px;
+        padding: 2rem;
+    }
+    
+    .social-icon {
+        width: 80px;
+        height: 80px;
     }
 }
