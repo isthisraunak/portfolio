@@ -1,44 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raunak S. Negi - Portfolio</title>
+    <title>Raunak S. Negi | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark">
+<body>
+    <!-- Animated Gradient Background -->
+    <div class="gradient-bg"></div>
+    
     <!-- Mouse Follower -->
     <div class="mouse-follower"></div>
 
-    <!-- Navigation -->
     <nav class="nav">
         <h1 class="logo">Raunak S. Negi</h1>
-        <button class="theme-toggle">🌙 Dark</button>
+        <button class="theme-toggle">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+        </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="hero-title">Hi, I'm Raunak</h2>
-            <p class="hero-subtitle">Crafting immersive digital experiences</p>
-            <button class="cta-button">Get in Touch</button>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-content">
-            <h2 class="contact-title">Let's Connect</h2>
-            <div class="social-links">
-                <a href="mailto:negiraunak49@gmail.com" class="social-link email">
-                    <svg>...</svg>
-                </a>
-                <a href="https://www.instagram.com/raunaksnegi1/" target="_blank" class="social-link instagram">
-                    <svg>...</svg>
-                </a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    <span class="title-gradient">Hi, I'm Raunak</span>
+                </h2>
+                <p class="hero-subtitle">Building immersive digital experiences</p>
+                <button class="cta-button">
+                    <span>Get in Touch</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="social-grid">
+                    <!-- Email Card -->
+                    <a href="mailto:negiraunak49@gmail.com" class="social-card email-card">
+                        <div class="card-gradient"></div>
+                        <svg class="social-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                        </svg>
+                        <span class="card-label">negiraunak49@gmail.com</span>
+                    </a>
+
+                    <!-- Instagram Card -->
+                    <a href="https://www.instagram.com/raunaksnegi1/" target="_blank" class="social-card instagram-card">
+                        <div class="card-gradient"></div>
+                        <svg class="social-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"/>
+                        </svg>
+                        <span class="card-label">@raunaksnegi1</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
