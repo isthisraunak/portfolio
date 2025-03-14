@@ -1,27 +1,56 @@
-// Mouse Follower
+// Smooth Mouse Follower
 document.addEventListener('mousemove', (e) => {
     const follower = document.querySelector('.mouse-follower');
-    follower.style.left = `${e.clientX}px`;
-    follower.style.top = `${e.clientY}px`;
+    follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });
 
 // Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+
 themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    document.body.classList.toggle('light');
-    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    const isDark = body.classList.contains('dark');
+    body.classList.toggle('dark', !isDark);
+    body.classList.toggle('light', isDark);
+    
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const themeText = themeToggle.querySelector('.theme-text');
+    
+    if (isDark) {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+        localStorage.setItem('theme', 'dark');
+    }
 });
 
 // Initialize Theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
-document.body.classList.add(savedTheme);
-themeToggle.textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+body.classList.add(savedTheme);
+if (savedTheme === 'light') {
+    document.querySelector('.theme-icon').textContent = '☀️';
+    document.querySelector('.theme-text').textContent = 'Light';
+}
 
 // Smooth Scroll
-document.querySelector('.cta-button').addEventListener('click', () => {
+document.querySelector('.cta-button').addEventListener('click', (e) => {
+    e.preventDefault();
     document.querySelector('.contact-section').scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
+// Card Hover Effects
+document.querySelectorAll('.social-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
     });
 });
