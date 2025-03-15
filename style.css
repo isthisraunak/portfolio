@@ -55,9 +55,6 @@ body {
 
 .nav {
     padding: 1.5rem 5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
@@ -101,78 +98,45 @@ body {
     opacity: 0.9;
 }
 
-.cta-button {
-    padding: 1.25rem 3rem;
-    border-radius: 999px;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.25rem;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
-}
-
-.arrow-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.contact-section {
-    min-height: 100vh;
-    padding: 5rem 5vw;
+/* Fixed Social Icons */
+.fixed-socials {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 15px;
+    z-index: 100;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.social-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.social-link {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.social-link:hover {
-    transform: scale(1.1);
+.social-icon {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    fill: currentColor;
 }
 
-.gmail-icon, .instagram-icon {
-    width: 64px;
-    height: 64px;
+.social-icon:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.gmail-icon {
-    fill: #EA4335;
+.social-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
-.instagram-icon {
-    fill: #E1306C;
+/* Gmail specific styling */
+.social-icon:nth-child(1) {
+    color: #EA4335;
+}
+
+/* Instagram specific styling */
+.social-icon:nth-child(2) {
+    color: #E1306C;
 }
 
 @media (max-width: 768px) {
@@ -184,7 +148,14 @@ body {
         font-size: 1.5rem;
     }
     
-    .social-links {
-        flex-direction: column;
+    .fixed-socials {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        padding: 6px;
     }
 }
